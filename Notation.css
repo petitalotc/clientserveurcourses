@@ -163,10 +163,6 @@
     margin-top: 76px;
   }
 
-  .u-section-2 .u-repeater-1 {
-    grid-auto-rows: calc(50% - 5px);
-  }
-
   .u-section-2 .u-group-1 {
     width: 462px;
     margin-top: -503px;
@@ -198,7 +194,6 @@
   .u-section-2 .u-repeater-1 {
     grid-auto-columns: calc(25% - 7.5px);
     grid-template-columns: calc(25% - 7.5px) calc(25% - 7.5px) calc(25% - 7.5px) calc(25% - 7.5px);
-    grid-auto-rows: 100%;
   }
 
   .u-section-2 .u-group-1 {
@@ -224,8 +219,7 @@
 
   .u-section-2 .u-repeater-1 {
     grid-auto-columns: calc(50% - 5px);
-    grid-template-columns: repeat(2, calc(50% - 5px));
-    grid-auto-rows: calc(50% - 5px);
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
   }
 
   .u-section-2 .u-container-layout-1 {
@@ -270,7 +264,6 @@
   .u-section-2 .u-repeater-1 {
     grid-auto-columns: 100%;
     grid-template-columns: 100%;
-    grid-auto-rows: calc(25% - 7.5px);
   }
 
   .u-section-2 .u-text-2 {
@@ -383,7 +376,6 @@
   .u-section-3 .u-repeater-1 {
     grid-auto-columns: calc(100% - 0px);
     grid-template-columns: calc(50% - 5px) calc(50% - 5px);
-    grid-auto-rows: calc(50% - 5px);
   }
 }
 
@@ -399,7 +391,7 @@
   .u-section-3 .u-repeater-1 {
     grid-auto-columns: 100%;
     grid-template-columns: 100%;
-    grid-auto-rows: 100%;
+    grid-auto-rows: calc(50% - 5px);
   }
 
   .u-section-3 .u-container-layout-1 {
@@ -443,8 +435,8 @@
 }
 
 .u-section-4 .u-repeater-1 {
-  grid-auto-columns: 100%;
-  grid-template-columns: 100%;
+  grid-auto-columns: calc(50% - 5px);
+  grid-template-columns: calc(50% - 5px) calc(50% - 5px);
   grid-gap: 10px 10px;
   grid-auto-rows: 100%;
 }
@@ -468,6 +460,28 @@
 }
 
 .u-section-4 .u-text-3 {
+  margin: 20px 0 0;
+}
+
+.u-section-4 .u-container-layout-2 {
+  padding: 30px;
+}
+
+.u-section-4 .u-icon-2 {
+  height: 64px;
+  width: 64px;
+  background-image: none;
+  color: rgb(255, 255, 255) !important;
+  margin: 0 auto;
+}
+
+.u-section-4 .u-text-4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 20px 0 0;
+}
+
+.u-section-4 .u-text-5 {
   margin: 20px 0 0;
 }
 
@@ -497,7 +511,7 @@
   }
 
   .u-section-4 .u-list-1 {
-    min-height: 627px;
+    min-height: 836px;
   }
 
   .u-section-4 .u-repeater-1 {
@@ -513,6 +527,7 @@
 
   .u-section-4 .u-list-1 {
     margin-top: 88px;
+    min-height: 627px;
   }
 
   .u-section-4 .u-repeater-1 {
@@ -524,11 +539,20 @@
     padding-left: 10px;
     padding-right: 10px;
   }
+
+  .u-section-4 .u-container-layout-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 @media (max-width: 575px) {
   .u-section-4 .u-text-1 {
     width: 340px;
+  }
+
+  .u-section-4 .u-list-1 {
+    min-height: 395px;
   }
 }.u-section-5 {
   background-image: none;
@@ -651,8 +675,9 @@
   }
 
   .u-section-5 .u-repeater-1 {
-    grid-auto-columns: calc(50% - 5.0000025px);
+    grid-auto-columns: calc(50% - 5px);
     grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    grid-auto-rows: calc(50% - 5px);
   }
 }
 
@@ -668,6 +693,7 @@
   .u-section-5 .u-repeater-1 {
     grid-auto-columns: calc(100% - 0px);
     grid-template-columns: 100%;
+    grid-auto-rows: calc(33.33% - 6.66667px);
   }
 
   .u-section-5 .u-container-layout-1 {
@@ -867,10 +893,6 @@
     min-height: 648px;
     height: auto;
   }
-
-  .u-section-6 .u-repeater-1 {
-    grid-auto-rows: 100%;
-  }
 }
 
 @media (max-width: 991px) {
@@ -887,8 +909,9 @@
   }
 
   .u-section-6 .u-repeater-1 {
-    grid-auto-columns: calc(50% - 5.0000025px);
+    grid-auto-columns: calc(50% - 5px);
     grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    grid-auto-rows: calc(33.33% - 6.66667px);
   }
 }
 
@@ -904,6 +927,7 @@
   .u-section-6 .u-repeater-1 {
     grid-auto-columns: calc(100% - 0px);
     grid-template-columns: 100%;
+    grid-auto-rows: calc(16.66% - 8.33333px);
   }
 
   .u-section-6 .u-container-layout-1 {
@@ -1059,7 +1083,6 @@
   .u-section-7 .u-repeater-1 {
     grid-auto-columns: calc(100% - 0px);
     grid-template-columns: calc(50% - 5px) calc(50% - 5px);
-    grid-auto-rows: calc(50% - 5px);
   }
 }
 
@@ -1075,7 +1098,7 @@
   .u-section-7 .u-repeater-1 {
     grid-auto-columns: 100%;
     grid-template-columns: 100%;
-    grid-auto-rows: 100%;
+    grid-auto-rows: calc(50% - 5px);
   }
 
   .u-section-7 .u-container-layout-1 {
@@ -1121,7 +1144,7 @@
 .u-section-8 .u-text-1 {
   font-size: 3.75rem;
   font-weight: 700;
-  margin: 0 auto 0 -1px;
+  margin: 0 28px 0 -1px;
 }
 
 .u-section-8 .u-layout-cell-2 {
@@ -1144,6 +1167,10 @@
 
   .u-section-8 .u-layout-cell-1 {
     min-height: 321px;
+  }
+
+  .u-section-8 .u-text-1 {
+    margin-right: 0;
   }
 
   .u-section-8 .u-layout-cell-2 {
