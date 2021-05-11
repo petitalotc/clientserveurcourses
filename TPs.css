@@ -21,6 +21,10 @@
   margin: 20px auto 0;
 }
 
+.u-section-1 .u-btn-1 {
+  padding: 0;
+}
+
 .u-section-1 .u-accordion-1 {
   margin-bottom: 60px;
   margin-top: 30px;
@@ -53,7 +57,7 @@
   padding: 20px 30px;
 }
 
-.u-section-1 .u-btn-1 {
+.u-section-1 .u-btn-2 {
   padding: 0;
 }
 
