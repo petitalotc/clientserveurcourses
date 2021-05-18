@@ -15,6 +15,10 @@
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     
     
+    
+    
+    
+    
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -163,6 +167,196 @@ de films par pays ainsi que leurs titres.<br>Le résultat devra
               <div class="u-container-layout u-container-layout-7">
                 <div class="fr-view u-clearfix u-rich-text u-text">
                   <p>Attention certains films ont plus d'un pays !</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-2" id="sec-e1e0">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h1 class="u-text u-text-1">Corrections possibles</h1>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-white u-section-3" id="carousel_3950">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-col">
+              <div class="u-size-20">
+                <div class="u-layout-row">
+                  <div class="u-align-center u-container-style u-layout-cell u-size-15 u-layout-cell-1">
+                    <div class="u-container-layout u-container-layout-1">
+                      <h5 class="u-text u-text-1">1/ Compter le nombre de Thriller présents en base&nbsp; (films qui possèdent au moins le genre Thriller)</h5>
+                    </div>
+                  </div>
+                  <div class="u-container-style u-layout-cell u-palette-3-light-2 u-size-45 u-layout-cell-2">
+                    <div class="u-container-layout u-valign-middle u-container-layout-2">
+                      <blockquote class="u-text u-text-default u-text-2"> db.getCollection('mflix_movies').count({
+genres: "Thriller" })
+db.getCollection('mflix_movies').count({genres:
+{ $all: ["Thriller"] }})
+db.getCollection('mflix_movies').count({genres:{
+$elemMatch: { $eq: "Thriller" }}})
+&nbsp;
+OU un .find(avec
+votre requête).count() </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-20">
+                <div class="u-layout-row">
+                  <div class="u-align-center u-container-style u-layout-cell u-size-15 u-layout-cell-3">
+                    <div class="u-container-layout u-valign-top-xs u-container-layout-3">
+                      <h5 class="u-text u-text-3">2/ Trouver la liste des films qui contiennent le mot "ghost" dans leur titre&nbsp;</h5>
+                    </div>
+                  </div>
+                  <div class="u-container-style u-layout-cell u-palette-3-light-3 u-size-45 u-layout-cell-4">
+                    <div class="u-container-layout u-valign-middle u-container-layout-4">
+                      <blockquote class="u-text u-text-default u-text-4"> db.getCollection('mflix_movies').find({
+title: /ghost/i }) </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-20">
+                <div class="u-layout-row">
+                  <div class="u-align-center u-container-style u-layout-cell u-size-15 u-layout-cell-5">
+                    <div class="u-container-layout u-container-layout-5">
+                      <h5 class="u-text u-text-5">3/ Trouver la liste des films qui contiennent le mot "ghost" dans leur titre et qui sont sortis après 2013&nbsp;</h5>
+                    </div>
+                  </div>
+                  <div class="u-container-style u-layout-cell u-palette-3-light-2 u-shape-rectangle u-size-45 u-layout-cell-6">
+                    <div class="u-container-layout u-valign-middle u-container-layout-6">
+                      <blockquote class="u-text u-text-default u-text-6"> db.getCollection('mflix_movies').find({
+title: /ghost/i, year: {$gte: 2013 }}) </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-white u-section-4" id="sec-a599">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-col">
+              <div class="u-size-20">
+                <div class="u-layout-row">
+                  <div class="u-align-center u-container-style u-layout-cell u-size-15 u-layout-cell-1">
+                    <div class="u-container-layout u-container-layout-1">
+                      <h5 class="u-text u-text-1">4/ Trouver le film qui a gagné le plus de récompenses&nbsp;</h5>
+                    </div>
+                  </div>
+                  <div class="u-container-style u-layout-cell u-palette-3-light-2 u-size-45 u-layout-cell-2">
+                    <div class="u-container-layout u-valign-middle u-container-layout-2">
+                      <blockquote class="u-text u-text-default u-text-2"> db.getCollection('mflix_movies').aggregate([&nbsp;&nbsp;<br>&nbsp; &nbsp;{$sort : {"awards.wins" : -1}},&nbsp;&nbsp;<br>&nbsp; &nbsp;{$limit : 1 }&nbsp;<br>]) 
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-20">
+                <div class="u-layout-row">
+                  <div class="u-align-center u-container-style u-layout-cell u-size-15 u-layout-cell-3">
+                    <div class="u-container-layout u-valign-top-xs u-container-layout-3">
+                      <h5 class="u-text u-text-3">5/ Trouver le plus vieux film de plus de 2 heures ayant une note inférieur à 2 sur la plateforme imdb&nbsp;</h5>
+                    </div>
+                  </div>
+                  <div class="u-container-style u-layout-cell u-palette-3-light-3 u-size-45 u-layout-cell-4">
+                    <div class="u-container-layout u-valign-middle u-container-layout-4">
+                      <blockquote class="u-text u-text-default u-text-4"> db.getCollection('mflix_movies').aggregate([&nbsp;<br>&nbsp; &nbsp; &nbsp; {$match: { runtime: {$gte: 120}, "imdb.rating": {$lte:
+2.0} }},<br>&nbsp; &nbsp; &nbsp;{$sort : {"released" : 1}},<br>&nbsp; &nbsp; &nbsp;{$limit : 1 }<br>&nbsp; ]) 
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-20">
+                <div class="u-layout-row">
+                  <div class="u-align-center u-container-style u-layout-cell u-size-15 u-layout-cell-5">
+                    <div class="u-container-layout u-container-layout-5">
+                      <h5 class="u-text u-text-5">6/ Modifier la requête précédente pour récupérer en même temps les commentaires.&nbsp;</h5>
+                    </div>
+                  </div>
+                  <div class="u-container-style u-layout-cell u-palette-3-light-2 u-shape-rectangle u-size-45 u-layout-cell-6">
+                    <div class="u-container-layout u-valign-middle u-container-layout-6">
+                      <blockquote class="u-text u-text-default u-text-6"> db.getCollection('mflix_movies').aggregate([<br>&nbsp; &nbsp; &nbsp; &nbsp;{$match: { runtime: {$gte: 120}, "imdb.rating": {$lte:
+2.0} }},<br>&nbsp; &nbsp; &nbsp; {$sort : {"released" : 1}},<br>&nbsp; &nbsp; &nbsp; {$limit : 1 },<br>&nbsp; &nbsp; &nbsp;{$lookup: { from: "mflix_comments", localField:
+"_id", foreignField: "movie_id", as: "comments"
+}}<br>]) 
+                      </blockquote>
+                      <p class="u-text u-text-default u-text-7"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 492.004 492.004" x="0px" y="0px" style="width: 1em; height: 1em;"><g><g><path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"></path>
+</g>
+</g></svg><img></span>&nbsp;
+Ce qui est très important ici c'est de ne faire le lookup qu'à la toute fin de
+l'agrégation, sinon on va effectuer la jointure sur plusieurs documents source
+alors que seul le plus vieux nous intéresse.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-white u-section-5" id="carousel_49ea">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-col">
+              <div class="u-size-30">
+                <div class="u-layout-row">
+                  <div class="u-align-center u-container-style u-layout-cell u-size-15 u-layout-cell-1">
+                    <div class="u-container-layout u-container-layout-1">
+                      <h5 class="u-text u-text-1">7/ Récupérer le nombre de films par pays ainsi que leurs titres.<br>Le résultat devra être trié du pays avec le plus grand nombre de films au plus petit.&nbsp;
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="u-container-style u-layout-cell u-palette-3-light-2 u-size-45 u-layout-cell-2">
+                    <div class="u-container-layout u-valign-middle u-container-layout-2">
+                      <blockquote class="u-text u-text-default u-text-2">&nbsp; db.getCollection('mflix_movies').aggregate([<br>&nbsp; &nbsp; &nbsp; {$unwind: "$countries"},<br>&nbsp; &nbsp; &nbsp; {$group: { _id: "$countries", titles: {$push:
+"$title"}, count: { $sum: 1 } }},<br>&nbsp; &nbsp; &nbsp;{$sort : {"count" : -1}}<br>])&nbsp; &nbsp;&nbsp;<br>OU&nbsp; &nbsp;&nbsp;<br>db.getCollection("mflix_movies").aggregate([<br>&nbsp; {$unwind :
+"$countries"},<br>&nbsp; {$group:{
+&nbsp;&nbsp;&nbsp; "_id":"$countries",
+&nbsp;&nbsp;&nbsp; "movies":
+{$push:"$title"}
+}},<br>&nbsp;{$project :
+{"count":{$size : "$movies"}, movies : 1}},<br>&nbsp;{$sort :
+{"count": -1}}<br>])&nbsp; &nbsp; &nbsp;
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-30">
+                <div class="u-layout-row">
+                  <div class="u-align-center u-container-style u-layout-cell u-size-15 u-layout-cell-3">
+                    <div class="u-container-layout u-valign-top-xs u-container-layout-3">
+                      <h5 class="u-text u-text-3">BONUS/ Trouver les théâtres aux alentours (5km maxi) de
+New York (x =&nbsp; -73.983487 et y =
+40.76078) (collection mflix_theaters) :&nbsp;</h5>
+                    </div>
+                  </div>
+                  <div class="u-container-style u-layout-cell u-palette-3-light-3 u-size-45 u-layout-cell-4">
+                    <div class="u-container-layout u-valign-middle u-container-layout-4">
+                      <blockquote class="u-text u-text-default u-text-4">&nbsp; db.getCollection('mflix_theaters').aggregate([<br>&nbsp; &nbsp; &nbsp; { $geoNear: {&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;near: {
+type: "Point", coordinates: [ -73.983487,
+40.76078&nbsp;] },&nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; distanceField:
+"location.geo.coordinates",&nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; maxDistance: 5000,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; spherical: true&nbsp;<br>&nbsp; &nbsp;} }
+])&nbsp;&nbsp;<br>OU&nbsp;<br>db.getCollection("mflix_theaters").find(<br>&nbsp; {
+&nbsp;"location.geo":{ $nearSphere: {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $geometry: {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type : "Point",&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; coordinates : [ -73.983487, 40.76078 ]
+&nbsp;&nbsp;&nbsp;&nbsp; },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $minDistance: 0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $maxDistance: 5000<br>&nbsp;&nbsp;&nbsp; }}<br>&nbsp; })&nbsp;&nbsp;
+                      </blockquote>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
