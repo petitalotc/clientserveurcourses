@@ -153,6 +153,10 @@
   margin: 26px 0 0;
 }
 
+.u-section-2 .u-btn-1 {
+  padding: 0;
+}
+
 @media (max-width: 1199px) {
   .u-section-2 .u-sheet-1 {
     min-height: 572px;
